@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
   def new
   end
 
+
+
   def create
     user = User.find_by(email: session_params[:email])
     if user and user.authenticate(session_params[:password])
@@ -19,10 +21,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     session.delete(:user_id)
     flash[:success] = "Logout successfully! Vemos mi perro"
-    redirect_to welcome_path
+    redirect_to new_session_path
   end
 
   def welcome

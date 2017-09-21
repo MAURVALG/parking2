@@ -1,0 +1,16 @@
+<h1>Listing tickets</h1>
+<%= link_to 'Log_out', new_session_path %>
+<%= link_to 'new_ticket', new_ticket_path %>
+
+<table>
+  <tr>
+    <th>plate</th>
+  </tr>
+
+  <% @ticket.each do |ticket| %>
+    <tr>
+      <td><%= ticket.plate %></td>
+      <td><%= link_to 'show', ticket_path(ticket) %></td>
+    </tr>
+  <% end %>
+</table>

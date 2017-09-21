@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/sessions/welcome' => 'sessions#welcome', as: :welcome
   delete '/sessions' => 'sessions#destroy', as: :logout
 
+  resources :tickets
+
+  post '/tickets/:id/charge' => 'tickets#payment', as: :payment
+  get  '/tickets/:id/bill' => 'tickets#bill', as: :bill
 
   root to: 'sessions#welcome'
 end

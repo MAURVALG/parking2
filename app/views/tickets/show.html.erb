@@ -1,0 +1,17 @@
+<p>
+  <strong>plate:</strong>
+  <%= @ticket.plate %>
+</p>
+
+<p>
+  <strong>vtype:</strong>
+  <%= @ticket.vtype%>
+</p>
+<p>
+  <strong>Init:</strong>
+  <%= @ticket.init%>
+</p>
+
+<%= link_to 'back', tickets_path %>
+<%= link_to 'edit', edit_ticket_path %>
+<%= link_to 'charge', bill_path %>

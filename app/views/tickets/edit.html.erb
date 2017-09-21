@@ -1,0 +1,22 @@
+<h1>Edit article</h1>
+
+<%= form_with(model: @ticket) do |form| %>
+
+<p>
+   <%= form.label :plate%><br>
+   <%= form.text_field :plate %>
+ </p>
+
+ <p>
+   <%= form.label :vtype %><br>
+   <%= form.text_field :vtype %>
+ </p>
+
+ <p>
+   <%= form.submit %>
+ </p>
+
+
+<% end %>
+
+<%= link_to 'Back', tickets_path %>

@@ -1,0 +1,8 @@
+<h1> New ticket </h1>
+<%= form_for :ticket, url: tickets_path, method: :post do |f|%>
+    <%= f.label :plate %><br>
+    <%=  f.text_field :plate %><br>
+    <%= f.label :vtype %><br>
+    <%=  f.text_field :vtype %><br>
+    <%= f.submit 'create'%>
+<% end %>
