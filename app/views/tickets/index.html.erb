@@ -1,6 +1,4 @@
 <h1>Listing tickets</h1>
-<%= link_to 'Log_out', new_session_path %>
-<%= link_to 'new_ticket', new_ticket_path %>
 
 <table>
   <tr>
@@ -11,6 +9,11 @@
     <tr>
       <td><%= ticket.plate %></td>
       <td><%= link_to 'show', ticket_path(ticket) %></td>
+      <td>  <%= link_to 'Delete Plate', ticket_path(ticket) method: :delete %></td>
+
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'Log_out', new_session_path %>
+<%= link_to 'new_ticket', new_ticket_path %>

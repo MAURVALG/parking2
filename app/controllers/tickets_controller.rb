@@ -37,14 +37,30 @@ def update
    end
 end
 
-def payment
-end
-
 def bill
   @ticket = Ticket.find(params[:id])
   @ticket.exit = DateTime.now
   @ticket.price = (@ticket.exit - @ticket.init) * 10
 end
+
+def payment
+  @ticket = Ticket.find(params[:ticket_id])
+  @ticket.exit = DateTime.now
+  @ticket.price = (@ticket.exit - @ticket.init) * 10
+
+  if @ticket.save
+  redirect_to bill_path(@ticket)
+  else
+  render 'payment'
+  end
+end
+
+def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+    redirect_to @ticket.index
+end
+
 
 end
 
