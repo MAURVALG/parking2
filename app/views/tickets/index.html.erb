@@ -9,8 +9,9 @@
     <tr>
       <td><%= ticket.plate %></td>
       <td><%= link_to 'show', ticket_path(ticket) %></td>
-      <td>  <%= link_to 'Delete Plate', ticket_path(ticket) method: :delete %></td>
-
+      <td><%= link_to 'destroy', ticket_path(ticket),
+              method: :delete,
+              data: {confirm: 'Are you sure?'}%></td>
     </tr>
   <% end %>
 </table>

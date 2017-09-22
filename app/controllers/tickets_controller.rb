@@ -28,8 +28,7 @@ def edit
 end
 
 def update
-  @ticket = Ticket.find(params[:id])
-
+   @ticket = Ticket.find(params[:id])
    if @ticket.update(ticket_params)
      redirect_to @ticket
    else
@@ -58,7 +57,7 @@ end
 def destroy
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
-    redirect_to @ticket.index
+    redirect_to tickets_path
 end
 
 
